@@ -28,7 +28,6 @@ class Login extends Component{
     }
     handleTestOptionChange = (selectedOption) => {
         const { dispatch } = this.props;
-        console.log(`Option selected:`, selectedOption.value);
         dispatch(testSelected(selectedOption.value));
         this.setState({
             selectedOption : selectedOption
@@ -37,7 +36,6 @@ class Login extends Component{
     handleNameChange(e){
         e.preventDefault();
         const { dispatch } = this.props;
-        console.log('name',e.target.value);
         dispatch(changeUser(e.target.value));
     }
     handleSubmit(e){
@@ -46,10 +44,8 @@ class Login extends Component{
         if(this.validateForm()){
             const { user } = this.props;
             const { testSelected } = user;
-            console.log("test question fetxh",testSelected);
             dispatch(getQuestion(testSelected));
             dispatch(routerChange(QUESTION_PATH));
-            console.log("submit button event",e);
         }
     }
     validateForm(){

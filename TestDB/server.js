@@ -42,6 +42,10 @@ app.post('/questions',function(req,res){
                   "Python_03" : {question : "Which is the valid declarations within an interface definition?",
                                   options: ["public double methoda();","public final double methoda();","static void methoda(double d1);","protected void methoda(double d1);"],
                                   //answer : "public double methoda();",
+                                  test_name: "Python" },
+                  "Python_04" : {question : "What are the method(s) that iterator object must implement?",
+                                  options: ["__iter__()","iter__()","__iter()","iter()"],
+                                 //answer : "public double methoda();",
                                   test_name: "Python" }
     })
     }
@@ -56,7 +60,7 @@ app.post('/check_answer',(req,res) => {
   }else{
     res.send({
         question_id : req.body.question_id,
-        correct : false
+        correct : true
     })
   }
 })

@@ -17,7 +17,6 @@ class QuestionContainer extends Component{
 QuestionContainer.propTypes = propTypes;
 
 function mapStateToProps(state){
-	console.log(state);
 	const { question } = state;
 	return { question };
 }
