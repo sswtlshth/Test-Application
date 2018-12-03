@@ -16,15 +16,34 @@ app.get('/test_names', ( req,res ) => {
 //routes
 app.post('/questions',function(req,res){
     if(req.body.test === 'java'){
-        res.json([{ question_id : "Java_01", question : "Which is a reserved word in the Java programming language?", options: ["method","native","subclasses","reference"],answer : "native",test_name: "java" },
-        { question_id : "Java_02", question : "Which is a valid keyword in java?", options: ["interface","string","Float","unsigned"],answer : "interface", test_name: "java" },
-        { question_id : "Java_03", question : "Which is the valid declarations within an interface definition?", options: ["public double methoda();","public final double methoda();","static void methoda(double d1);","protected void methoda(double d1);"],answer : "public double methoda();", test_name: "java" }]
-     );
+        res.json( {"Java_01": {question : "Which is a reserved word in the Java programming language?",
+                              options: ["method","native","subclasses","reference"],
+                            //  answer : "native",
+                              test_name: "java"
+                             },
+                  "Java_02": {question : "Which is a valid keyword in java?",
+                              options: ["interface","string","Float","unsigned"],
+                              //answer : "interface",
+                              test_name: "java" },
+                  "Java_03": {question : "Which is the valid declarations within an interface definition?",
+                              options: ["public double methoda();","public final double methoda();","static void methoda(double d1);","protected void methoda(double d1);"],
+                              //answer : "public double methoda();",
+                              test_name: "java" }
+                            } );
     }else if( req.body.test === 'python'){
-        res.json([{ question_id : "Python_01", question : "Which is a reserved word in the Python programming language?", options: ["method","native","subclasses","reference"],answer : "native",test_name: "Python" },
-        { question_id : "Python_02", question : "Which is a valid keyword in Python?", options: ["interface","string","Float","unsigned"],answer : "interface", test_name: "Python" },
-        { question_id : "Python_03", question : "Which is the valid declarations within an interface definition?", options: ["public double methoda();","public final double methoda();","static void methoda(double d1);","protected void methoda(double d1);"],answer : "public double methoda();", test_name: "Python" }
-    ])
+        res.json( {"Python_01" : {question : "Which is a reserved word in the Python programming language?",
+                                  options: ["method","native","subclasses","reference"],
+                                  //answer : "native",
+                                  test_name: "Python" },
+                   "Python_02" : {question : "Which is a valid keyword in Python?",
+                                  options: ["interface","string","Float","unsigned"],
+                                  //answer : "interface",
+                                  test_name: "Python" },
+                  "Python_03" : {question : "Which is the valid declarations within an interface definition?",
+                                  options: ["public double methoda();","public final double methoda();","static void methoda(double d1);","protected void methoda(double d1);"],
+                                  //answer : "public double methoda();",
+                                  test_name: "Python" }
+    })
     }
 });
 

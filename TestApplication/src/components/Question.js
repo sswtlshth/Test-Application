@@ -1,17 +1,11 @@
 import React,{Component } from 'react';
-import PropTypes from 'prop-types';
 import { updateAnswer } from '../actions/QuestionAction';
 
 class Question extends Component{
-    constructor(){
-        super();
-       // this.handleOptionClick = this.handleOptionClick.bind(this);
-    }
     handleOptionClick(index,e){
         e.preventDefault();
         const { dispatch,questionId } = this.props;
         dispatch(updateAnswer(questionId,index));
-        console.log("index", index);
     }
     renderOptions(){
         const {question} = this.props;
@@ -27,12 +21,10 @@ class Question extends Component{
     }
     render(){
         const { question } = this.props;
-        const { ques } =  question;
-        console.log("question",question);
         return(
             <div className="container continer-fluid">
             <div className="jumbotron">
-                <h2>{ques}</h2>
+                <h2>{question['question']}</h2>
             </div>
                 {this.renderOptions()}
             </div>

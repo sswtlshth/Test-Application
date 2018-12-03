@@ -4,6 +4,7 @@ import Question from './Question';
 import { RESULT_PATH } from '../constants/ActionTypes';
 import { routerChange } from '../actions/RouterAction';
 import { questionChange } from '../actions/QuestionAction';
+import { checkAnswer } from '../utils/ApiUtils';
 
 const propTypes = {
 	dispatch : PropTypes.func.isRequired,
@@ -14,8 +15,8 @@ class QuestionWrap extends Component{
     constructor(){
         super();
         this.state = {
-            errors: {},
-        },
+            errors: {}
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     
@@ -36,8 +37,10 @@ class QuestionWrap extends Component{
         }else{
             if(currentQuestionNumber+1 === Object.keys(question.questions).length){
                 dispatch(routerChange(RESULT_PATH));
+            }else{
+                dispatch(questionChange());
             }
-            dispatch(questionChange());
+            dispatch(checkAnswer(questionId,answer));
         }
         //send BE req to check ans
     }

@@ -5,20 +5,19 @@ import { QUESTION_PATH } from '../constants/ActionTypes';
 import { routerChange } from '../actions/RouterAction';
 import { testSelected,changeUser } from '../actions/UserActions';
 import Select from 'react-select';
+
 const propTypes = {
     dispatch : PropTypes.func.isRequired,
     user : PropTypes.object.isRequired,
     question : PropTypes.object.isRequired,
-    //error: PropTypes.object
 }
-
 class Login extends Component{
     constructor(){
         super();
         this.state = {
             errors: {},
             selectedOption: null
-        },
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTestOptionChange = this.handleTestOptionChange.bind(this);
         this.handleNameChange = this.handleNameChange.bind(this);
@@ -30,7 +29,7 @@ class Login extends Component{
     handleTestOptionChange = (selectedOption) => {
         const { dispatch } = this.props;
         console.log(`Option selected:`, selectedOption.value);
-        dispatch(testSelected(selectedOption.value))
+        dispatch(testSelected(selectedOption.value));
         this.setState({
             selectedOption : selectedOption
         })
@@ -45,11 +44,12 @@ class Login extends Component{
         e.preventDefault();
         const { dispatch } = this.props;
         if(this.validateForm()){
-            dispatch(testSelected())
+            const { user } = this.props;
+            const { testSelected } = user;
+            console.log("test question fetxh",testSelected);
+            dispatch(getQuestion(testSelected));
             dispatch(routerChange(QUESTION_PATH));
             console.log("submit button event",e);
-        }else{
-            return (console.log("erreoe"))
         }
     }
     validateForm(){

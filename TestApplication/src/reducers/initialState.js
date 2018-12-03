@@ -6,7 +6,7 @@ export default {
         testSelected: null
     },
     question: {
-       testNames : ["java","python"],
+       testNames : [],
        questions : {
             1 : {
                 'ques' : "What is Java",
@@ -14,16 +14,11 @@ export default {
             }
         },
         currentQuestionNumber: 0,
-        totalQuestion: 4,
-        totalScore: 3,
+        totalQuestion: 0,
+        totalScore: 0,
         isFetching: false
     },
     router: {
         route : LOGIN_PATH
-    },
-    errors: {
-        loginErrors: {
-
-        },
     }
 }

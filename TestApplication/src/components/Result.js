@@ -16,16 +16,13 @@ class Result extends Component {
 
     return (
         <div className="container container-fluid">
-        <div className="jumbotron text-xs-center">
-            <h1>Thanks,{ username}</h1>
-            <div>
-                <br></br>
-            <h3>You responded correctly to <b>{totalScore}</b> out of <b>{totalQuestion}</b> questions</h3>
-        </div>
-
-        </div>
-        
-        
+            <div className="jumbotron text-xs-center">
+                <h1>Thanks,{ username}</h1>
+                <div>
+                    <br></br>
+                    <h3>You responded correctly to <b>{totalScore}</b> out of <b>{totalQuestion}</b> questions</h3>
+                 </div>
+            </div>  
         </div>
       );	
 	}

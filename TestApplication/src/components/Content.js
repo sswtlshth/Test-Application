@@ -12,19 +12,14 @@ const propTypes = {
 };
 
 class Content extends Component{
-		constructor() {
-			super();
-		}
-
-		componentDidMount(){
-			const { dispatch } = this.props;
-			dispatch(getTestNames());
-		}
+	componentDidMount(){
+		const { dispatch } = this.props;
+		dispatch(getTestNames());
+	}
 
     render(){
         const { router } = this.props;
         const { route } = router;
-        console.log("router", router)
         switch(route){
             case LOGIN_PATH : {
                 return (<LoginContainer/>);
@@ -37,9 +32,7 @@ class Content extends Component{
             }
             default : return null;
         }
-
     }
-
 }
 
 Content.propTypes = propTypes

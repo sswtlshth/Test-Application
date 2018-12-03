@@ -17,7 +17,6 @@ class ResultContainer extends Component{
 ResultContainer.propTypes = propTypes;
 
 function mapStateToProps(state){
-	console.log(state);
 	const { user,question } = state;
 	return { user,question };
 }

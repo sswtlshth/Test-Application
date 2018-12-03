@@ -17,7 +17,6 @@ class ContentContainer extends Component{
 ContentContainer.propTypes = propTypes;
 
 function mapStateToProps(state){
-	console.log(state);
 	const { router } = state;
 	return { router };
 }

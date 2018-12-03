@@ -23,14 +23,25 @@ export default function product(state=initialState.question,action){
 				}
 			}
 		};
-		case types.TEST_LIST_UPDATE:
+	case types.TEST_LIST_UPDATE:
 		{
 			return{
 				...state,
-				questions: {
-					...state.questions,
 					'testNames' : action.testNames
-				}
+			}
+		}
+	case  types.QUESTION_LIST_UPDATE:
+		{ 
+			return{
+				...state,
+				'questions' : action.questions,
+				'totalQuestion' : action.noOfQuestions
+			}
+		}
+	case types.UPDATE_SCORE:{
+			return{
+				...state,
+				'totalScore' : state.totalScore + 1	
 			}
 		}
 	default:
