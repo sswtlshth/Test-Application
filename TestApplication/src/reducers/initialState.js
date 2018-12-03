@@ -23,7 +23,7 @@ export default {
     },
     errors: {
         loginErrors: {
-            
+
         },
     }
 }

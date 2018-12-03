@@ -7,11 +7,11 @@ export default function product(state=initialState.question,action){
 		return { ...state,
 			isFetching: true
 		};
-	case types.QUESTION_CHANGE: 
+	case types.QUESTION_CHANGE:
 		return { ...state,
 			currentQuestionNumber : state.currentQuestionNumber+1,
 			isFetching: false
-		} ; 
+		} ;
 	case types.OPTION_SELECTED:
 		return{
 			...state,
@@ -23,7 +23,17 @@ export default function product(state=initialState.question,action){
 				}
 			}
 		};
-	default: 
+		case types.TEST_LIST_UPDATE:
+		{
+			return{
+				...state,
+				questions: {
+					...state.questions,
+					'testNames' : action.testNames
+				}
+			}
+		}
+	default:
 		return state;
 	}
 }

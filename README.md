@@ -12,7 +12,8 @@ Express.js
 Steps to run application:
 To Run BackEnd:
 1) cd TestDB
-2) node server.js
+2) npm install
+3) node server.js
 
 This is start server at port 8000,
 

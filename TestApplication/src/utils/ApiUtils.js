@@ -1,8 +1,10 @@
 import { testSelected } from '../actions/UserActions';
-import { LOGIN_URL } from '../constants/URLconstants';
+import { LOGIN_URL,FETCH_TEST } from '../constants/URLconstants';
+import { DATA_URL } from '../config';
+import { fetchQuestions, updateTestName } from '../actions/QuestionAction';
 
 /* const BASE_URL = 'http://localhost:3080';
-const AUTH_URL= 'http://localhost:3080/login'; 
+const AUTH_URL= 'http://localhost:3080/login';
 
  export function fetchCategories(){
 	return dispatch => {
@@ -18,26 +20,25 @@ const AUTH_URL= 'http://localhost:3080/login';
 		})
 	}
 } */
-export function login(username,test){
+export function getTestNames(){
 	return dispatch =>{
-		console.log('login func');
-		dispatch(testSelected(username,test));
-		return callApi(LOGIN_URL, {
-			method: 'POST',
-			headers: { 'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-			body: serialize({ username, test}),
+		console.log('test function',DATA_URL);
+		dispatch(fetchQuestions());
+		return callApi(DATA_URL+FETCH_TEST, {
+			method: 'GET',
 		})
 			.then(json => {
 				console.log('function login',json);
-				//dispatch(loginSuccess(email));
+				dispatch(updateTestName(json));
 			})
 			.catch(err => {
 				console.log('error',err);
 			//	dispatch(loginFail());
-				// throw err; 
-			}); 
+				// throw err;
+			});
 	};
 }
+
 export function getQuestion(){
 	//callApi(QUESTION_PATH);
 }
@@ -60,7 +61,7 @@ export function serialize(obj) {
 		`${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`
 	).join('&');
 }
-  
+
 
 
 export function fetchCategories(){

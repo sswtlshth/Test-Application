@@ -1,15 +1,20 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var mongoose=require('mongoose');
-var morgon = require('morgan');
+const cors = require('cors');
+//var morgon = require('morgan');
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
+app.use(cors());
+var port = 9001;
 
-var port = 8000;
-
+app.get('/test_names', ( req,res ) => {
+  res.json(
+      ['java','python']
+  );
+});
 //routes
-app.post('/',function(req,res){
+app.post('/questions',function(req,res){
     if(req.body.test === 'java'){
         res.json([{ question_id : "Java_01", question : "Which is a reserved word in the Java programming language?", options: ["method","native","subclasses","reference"],answer : "native",test_name: "java" },
         { question_id : "Java_02", question : "Which is a valid keyword in java?", options: ["interface","string","Float","unsigned"],answer : "interface", test_name: "java" },
@@ -24,10 +29,18 @@ app.post('/',function(req,res){
 });
 
 app.post('/check_answer',(req,res) => {
+  if( (req.body.question_id === 'Java_01' && req.body.answer === 'native') || (req.body.question_id === 'Java_02' && req.body.answer === 'interface') || (req.body.question_id === 'Java_03' && req.body.answer === 'public double methoda();')){
     res.send({
         question_id : req.body.question_id,
         correct : true
     })
+  }else{
+    res.send({
+        question_id : req.body.question_id,
+        correct : false
+    })
+  }
 })
 
 app.listen(port);
+console.log('server started at ',port);

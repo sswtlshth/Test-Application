@@ -4,6 +4,7 @@ import { LOGIN_PATH, QUESTION_PATH, RESULT_PATH } from '../constants/ActionTypes
 import LoginContainer from '../container/LoginContainer';
 import QuestionContainer from '../container/QuestionContainer';
 import ResultContainer from '../container/ResultContainer';
+import {getTestNames} from '../utils/ApiUtils';
 
 const propTypes = {
 	dispatch : PropTypes.func.isRequired,
@@ -11,6 +12,14 @@ const propTypes = {
 };
 
 class Content extends Component{
+		constructor() {
+			super();
+		}
+
+		componentDidMount(){
+			const { dispatch } = this.props;
+			dispatch(getTestNames());
+		}
 
     render(){
         const { router } = this.props;
@@ -28,7 +37,7 @@ class Content extends Component{
             }
             default : return null;
         }
-        
+
     }
 
 }
