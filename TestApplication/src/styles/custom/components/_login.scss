@@ -1,0 +1,44 @@
+.login--page{
+  width: 80%;
+  background: #77f3b0;
+  vertical-align: middle;
+  border: 2px dotted black;
+  align-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 30px;
+}
+
+.login--page__header{
+  font-weight: bold;
+  font-size: 40px;
+  text-align: centre;
+  display: inline-block;
+  padding: 2px;
+  margin: 2px;
+  width: 80%;
+  font-weight: bold;
+}
+
+.login--page__input{
+  border: 2px double black;
+  display: inline-block;
+  padding: 2px;
+  margin: 2px;
+  width: 80%;
+  height: 40px;
+  font-size: 30px;
+}
+
+.login--page__submit{
+  color:black;
+  font-weight: bold;
+  background: #77f3b0;
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+
+.pad-top-5{
+padding-top:10px !important;
+}

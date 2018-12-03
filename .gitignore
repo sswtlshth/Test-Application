@@ -1,1 +1,3 @@
 TestDB/node_modules/*
+TestApplication/node_modules/*
+TestApplication/node_modules/.cache/babel-loader/*
