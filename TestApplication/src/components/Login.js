@@ -73,7 +73,7 @@ class Login extends Component{
             return({'value' : item, 'label' : item});
         })
         return(
-            <div className="container continer-fluid">
+            <div className="container continer-fluid login--main">
             <div className="jumbotron">
                 <h1>Technical Task</h1>
             </div>

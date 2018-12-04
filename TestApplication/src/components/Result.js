@@ -15,8 +15,8 @@ class Result extends Component {
     const { totalScore, totalQuestion } = question;
 
     return (
-        <div className="container container-fluid">
-            <div className="jumbotron text-xs-center">
+        <div className="container container-fluid" >
+            <div className="jumbotron text-xs-center header--main" >
                 <h1>Thanks,{ username}</h1>
                 <div>
                     <br></br>

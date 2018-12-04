@@ -23,7 +23,7 @@ class Question extends Component{
         const { question } = this.props;
         return(
             <div className="container continer-fluid">
-            <div className="jumbotron">
+            <div className="jumbotron header--main">
                 <h2>{question['question']}</h2>
             </div>
                 {this.renderOptions()}
