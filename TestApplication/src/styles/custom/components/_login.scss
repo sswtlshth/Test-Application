@@ -1,3 +1,49 @@
-.login--main{
-  width: 60%;
+.login-main{
+  position: relative;
+  margin: 10rem 1rem;
+  background: #eee;
+  padding: 1rem;
+  width: 70vw;
+  height: 80vh;
+  left: 15%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 2rem;
+}
+
+.main-title{
+  color: rgb(88, 43, 88);
+  text-align: center;
+  font-size: 4rem;
+}
+
+.login-main label{
+  padding-top: 1rem;
+  color: rgb(117, 58, 117);
+  font-size: 3rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.login-main input[type=text]:first-of-type{
+  width: 100%;
+  height: 4rem;
+}
+
+.login-main button{
+  color: rgb(57, 28, 136);
+  background: rgb(141, 121, 197);
+  border: 1px solid rgb(43, 32, 71);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+@media(min-width:40rem){
+
+  .main-title{
+    font-size: 7rem;
+  }
+  
+  .login-main label{
+    font-size: 5rem;
+  }
+  
 }

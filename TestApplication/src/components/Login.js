@@ -73,26 +73,19 @@ class Login extends Component{
             return({'value' : item, 'label' : item});
         })
         return(
-            <div className="container continer-fluid login--main">
-            <div className="jumbotron">
-                <h1>Technical Task</h1>
-            </div>
-            <div className="form-group">
-                <label form="email">Enter Name:</label>
-                <input type="text" className="form-control" id="email" placeholder="Enter your name" onBlur={this.handleNameChange}/>
+            <div className="login-main">
+                <h1 className="main-title">Technical Task</h1>
+                <label >Name</label>
+                <input type="text" id="email" placeholder="Enter your name" onBlur={this.handleNameChange}/>
                 <span style={{color: "red"}}>{this.state.errors["name"]}</span>
-            </div>
-            <div className="form-group">
+                <label >Select Test</label><br/>
                 <Select
                 value={selectedOption}
                 onChange={this.handleTestOptionChange}
                 options={options}
                 placeholder='Choose Test' />
                 <span style={{color: "red"}}>{this.state.errors["test"]}</span>
-            </div>
-            <div className="form-group">
-                <button type="submit" className="btn btn-success pad-top-5" onClick={this.handleSubmit}>Enter Test</button>
-            </div>
+                <button type="submit" onClick={this.handleSubmit}>Enter Test</button>
             </div>
         );
     }

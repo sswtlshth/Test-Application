@@ -5,6 +5,7 @@ Technologies used:
 Front End:
 React
 Redux
+
 Back End: 
 Node.js
 Express.js
@@ -15,7 +16,7 @@ To Run BackEnd:
 2) npm install
 3) node server.js
 
-This is start server at port 8000,
+This is start server at port 9001,
 
 To run FrontEnd: 
 1) cd TestApplication

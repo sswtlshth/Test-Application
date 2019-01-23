@@ -60,7 +60,7 @@ app.post('/check_answer',(req,res) => {
   }else{
     res.send({
         question_id : req.body.question_id,
-        correct : true
+        correct : false
     })
   }
 })
