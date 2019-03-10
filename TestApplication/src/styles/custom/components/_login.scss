@@ -37,6 +37,16 @@
 }
 
 @media(min-width:39rem){
+ 
+  .login-main{
+    width: 50%;
+    height: 80vh;
+   // left: 25%;
+   // position:relative;
+    min-width: 828px;
+   // margin: 4%;
+   
+  }
 
   .main-title{
     font-size: 6rem;
@@ -45,22 +55,15 @@
   .login-main label{
     font-size: 5rem;
   }
-  
-  .login-main{
-    width: 50vw;
-    height: 80vh;
-    left: 25%;
-    position:relative;
-  }
-
+ 
 }
 
-@media(min-width: 40rem){
-  .login-main{
-    margin: 4%;
-  }
-  .main-title{
-    font-size: 7rem;
-  }
-}
+// @media(min-width: 40rem){
+//   .login-main{
+//     margin: 4%;
+//   }
+//   .main-title{
+//     font-size: 7rem;
+//   }
+// }
 
